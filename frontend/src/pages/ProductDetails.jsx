@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
+import { API_URL } from "../utils/api";
+
 import { useCart } from "../context/CartContext";
 import ProductCard from "../components/ProductCard";
 
@@ -19,7 +21,7 @@ export default function ProductDetails() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
-    fetch(`/api/products/${id}`)
+    fetch(`${API_URL}/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -32,7 +34,7 @@ export default function ProductDetails() {
   useEffect(() => {
     if (!product) return;
 
-    fetch(`/api/products?type=${product.type}`)
+    fetch(`${API_URL}/api/products?type=${product.type}`)
       .then((res) => res.json())
       .then((data) => {
         const filtered = data.filter((item) => item._id !== product._id);

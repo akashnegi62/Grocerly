@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { FiX } from "react-icons/fi";
 import { useAuthContext } from "../context/AuthContext";
 
+import { API_URL } from "../utils/api";
+
 export default function AddAddressModal({ onClose, editAddress }) {
   const { token } = useAuthContext();
 
@@ -26,8 +28,8 @@ export default function AddAddressModal({ onClose, editAddress }) {
 
       await fetch(
         editAddress
-          ? `/api/users/addresses/${editAddress._id}`
-          : "/api/users/addresses",
+          ? `${API_URL}${API_URL}/api/users/addresses/${editAddress._id}`
+          : `${API_URL}/api/users/addresses`,
         {
           method: editAddress ? "PUT" : "POST",
           headers: {

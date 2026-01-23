@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+export const API_URL = import.meta.env.VITE_API_URL;
 
 //context
 import { useCart } from "../context/CartContext";
@@ -34,7 +35,7 @@ export default function CartDrawer() {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setAddressLoading(true);
 
-      fetch("/api/users/addresses", {
+      fetch(`${API_URL}/api/users/addresses`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

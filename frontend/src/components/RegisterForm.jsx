@@ -2,6 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { FiMail, FiLock } from "react-icons/fi";
+import { API_URL } from "../utils/api";
 
 export default function RegisterForm({ setStep, setEmail }) {
   const [email, setEmailLocal] = useState("");
@@ -17,7 +18,7 @@ export default function RegisterForm({ setStep, setEmail }) {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/auth/register", {
+      const res = await fetch(`${API_URL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

@@ -2,6 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useAuth } from "../hooks/useAuth";
+import { API_URL } from "../utils/api";
 
 export default function VerifyOtp({ email, onClose }) {
   const [otp, setOtp] = useState("");
@@ -17,7 +18,7 @@ export default function VerifyOtp({ email, onClose }) {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/auth/verify-otp", {
+      const res = await fetch(`${API_URL}/api/auth/verify-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp }),

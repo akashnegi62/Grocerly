@@ -2,6 +2,8 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useLocation } from "react-router-dom";
 
+import { API_URL } from "../utils/api";
+
 import OrderSuccessModal from "../components/OrderSuccessModal";
 import { useCart } from "../context/CartContext";
 import { useAddress } from "../context/AddressContext";
@@ -147,7 +149,7 @@ function CODSection({ amount }) {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("/api/orders", {
+      const res = await fetch(`${API_URL}/api/orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

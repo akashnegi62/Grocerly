@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
 
+import { API_URL } from "../utils/api";
+
 const AddressContext = createContext();
 
 export function AddressProvider({ children }) {
@@ -12,7 +14,7 @@ export function AddressProvider({ children }) {
   useEffect(() => {
     if (!token) return;
 
-    fetch("/api/users/addresses", {
+    fetch(`${API_URL}/api/users/addresses`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -27,7 +29,7 @@ export function AddressProvider({ children }) {
 
   /* ADD ADDRESS */
   const addAddress = async (newAddress) => {
-    const res = await fetch("/api/users/addresses", {
+    const res = await fetch(`${API_URL}/api/users/addresses`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

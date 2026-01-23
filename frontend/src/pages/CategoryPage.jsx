@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
+import { API_URL } from "../utils/api";
+
 import CategoryBar from "../components/CategoryBar";
 import ProductCard from "../components/ProductCard";
 
@@ -17,7 +19,7 @@ export default function CategoryPage() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
-    fetch(`/api/products/category/${category}`)
+    fetch(`${API_URL}/api/products/category/${category}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

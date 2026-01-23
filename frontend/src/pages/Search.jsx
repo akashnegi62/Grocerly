@@ -4,6 +4,8 @@ import ProductCard from "../components/ProductCard";
 import ProductCardSkeleton from "../components/ProductCardSkeleton";
 import bag from "../assets/Images/bag.webp";
 
+import { API_URL } from "../utils/api";
+
 export default function Search() {
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
@@ -17,7 +19,7 @@ export default function Search() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
-    fetch("/api/products")
+    fetch(`${API_URL}/api/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

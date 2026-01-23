@@ -2,6 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { FiMail, FiLock } from "react-icons/fi";
 import { useAuth } from "../hooks/useAuth";
+import { API_URL } from "../utils/api";
 
 export default function LoginForm({ onClose, setStep }) {
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ export default function LoginForm({ onClose, setStep }) {
       return;
     }
 
-    const res = await fetch("/api/auth/login", {
+    const res = await fetch(`${API_URL}/api/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

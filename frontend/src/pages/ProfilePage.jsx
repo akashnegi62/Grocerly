@@ -12,6 +12,8 @@ import { FiHome } from "react-icons/fi";
 import { FaRegEdit } from "react-icons/fa";
 import { FiDelete } from "react-icons/fi";
 
+import { API_URL } from "../utils/api";
+
 import { useAuth } from "../hooks/useAuth";
 import { useAuthContext } from "../context/AuthContext";
 import AddAddressModal from "../components/AddAddressModal";
@@ -29,7 +31,7 @@ export default function ProfilePage() {
       try {
         const token = localStorage.getItem("token");
 
-        const res = await fetch("/api/orders/my", {
+        const res = await fetch(`${API_URL}/api/orders/my`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -201,7 +203,7 @@ function Addresses() {
   const fetchAddresses = async () => {
     try {
       setLoading(true);
-      const res = await fetch("/api/users/addresses", {
+      const res = await fetch(`${API_URL}/api/users/addresses`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -218,7 +220,7 @@ function Addresses() {
   /* DELETE ADDRESS */
   const deleteAddress = async (id) => {
     try {
-      await fetch(`/api/users/addresses/${id}`, {
+      await fetch(`${API_URL}/api/users/addresses/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -312,7 +314,7 @@ function ProfileSection({ user }) {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("/api/users/profile", {
+      const res = await fetch(`${API_URL}/api/users/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

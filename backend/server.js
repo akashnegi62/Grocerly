@@ -17,6 +17,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+/* ROUTES */
+app.get("/", (req, res) => {
+  res.send("API is running 🚀");
+});
+
 app.use("/api/products", productRoutes);
 
 app.use("/api/categories", categoryRoutes);

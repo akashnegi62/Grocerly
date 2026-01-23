@@ -13,7 +13,7 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
-    fetch("http://localhost:3000/api/products")
+    fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

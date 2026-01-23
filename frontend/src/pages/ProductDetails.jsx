@@ -19,7 +19,7 @@ export default function ProductDetails() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
-    fetch(`http://localhost:3000/api/products/${id}`)
+    fetch(`/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -32,7 +32,7 @@ export default function ProductDetails() {
   useEffect(() => {
     if (!product) return;
 
-    fetch(`http://localhost:3000/api/products?type=${product.type}`)
+    fetch(`/api/products?type=${product.type}`)
       .then((res) => res.json())
       .then((data) => {
         const filtered = data.filter((item) => item._id !== product._id);

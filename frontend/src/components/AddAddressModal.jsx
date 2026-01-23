@@ -26,8 +26,8 @@ export default function AddAddressModal({ onClose, editAddress }) {
 
       await fetch(
         editAddress
-          ? `http://localhost:3000/api/users/addresses/${editAddress._id}`
-          : "http://localhost:3000/api/users/addresses",
+          ? `/api/users/addresses/${editAddress._id}`
+          : "/api/users/addresses",
         {
           method: editAddress ? "PUT" : "POST",
           headers: {

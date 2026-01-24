@@ -28,8 +28,8 @@ export default function AddAddressModal({ onClose, editAddress }) {
 
       await fetch(
         editAddress
-          ? `${API_URL}/api/users/addresses/${editAddress._id}`
-          : `${API_URL}/api/users/addresses`,
+          ? `http://localhost:3000/api/users/addresses/${editAddress._id}`
+          : `http://localhost:3000/api/users/addresses`,
         {
           method: editAddress ? "PUT" : "POST",
           headers: {
@@ -39,6 +39,8 @@ export default function AddAddressModal({ onClose, editAddress }) {
           body: JSON.stringify({ label, address }),
         },
       );
+
+      console.log(API_URL);
 
       setLoading(false);
       onClose();

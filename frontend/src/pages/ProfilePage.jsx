@@ -31,7 +31,7 @@ export default function ProfilePage() {
       try {
         const token = localStorage.getItem("token");
 
-        const res = await fetch(`${API_URL}/api/orders/my`, {
+        const res = await fetch(`http://localhost:3000/api/orders/my`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -203,7 +203,7 @@ function Addresses() {
   const fetchAddresses = async () => {
     try {
       setLoading(true);
-      const res = await fetch(`${API_URL}/api/users/addresses`, {
+      const res = await fetch(`http://localhost:3000/api/users/addresses`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -220,7 +220,7 @@ function Addresses() {
   /* DELETE ADDRESS */
   const deleteAddress = async (id) => {
     try {
-      await fetch(`${API_URL}/api/users/addresses/${id}`, {
+      await fetch(`http://localhost:3000/api/users/addresses/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -314,7 +314,7 @@ function ProfileSection({ user }) {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch(`${API_URL}/api/users/profile`, {
+      const res = await fetch(`http://localhost:3000/api/users/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

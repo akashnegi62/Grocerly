@@ -16,12 +16,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://grocerly-chi.vercel.app/"],
-    credentials: true,
-  }),
-);
+app.use(cors());
 
 /* ROUTES */
 app.get("/", (req, res) => {

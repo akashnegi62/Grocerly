@@ -19,7 +19,7 @@ export default function CategoryPage() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
-    fetch(`${API_URL}/api/products/category/${category}`)
+    fetch(`http://localhost:3000/api/products/category/${category}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

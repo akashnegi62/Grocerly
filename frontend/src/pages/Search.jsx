@@ -19,7 +19,7 @@ export default function Search() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
-    fetch(`${API_URL}/api/products`)
+    fetch(`http://localhost:3000/api/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

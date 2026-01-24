@@ -35,7 +35,7 @@ export default function CartDrawer() {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setAddressLoading(true);
 
-      fetch(`${API_URL}/api/users/addresses`, {
+      fetch(`http://localhost:3000/api/users/addresses`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -1,8 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
 
-import { API_URL } from "../utils/api";
-
 const AddressContext = createContext();
 
 export function AddressProvider({ children }) {

@@ -2,8 +2,6 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useLocation } from "react-router-dom";
 
-import { API_URL } from "../utils/api";
-
 import OrderSuccessModal from "../components/OrderSuccessModal";
 import { useCart } from "../context/CartContext";
 import { useAddress } from "../context/AddressContext";

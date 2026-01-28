@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-import { API_URL } from "../utils/api";
-
 import { useCart } from "../context/CartContext";
 import ProductCard from "../components/ProductCard";
 

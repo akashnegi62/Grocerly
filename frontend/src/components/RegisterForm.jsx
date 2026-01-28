@@ -2,7 +2,6 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { FiMail, FiLock } from "react-icons/fi";
-import { API_URL } from "../utils/api";
 
 export default function RegisterForm({ setStep, setEmail }) {
   const [email, setEmailLocal] = useState("");

@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { FiX } from "react-icons/fi";
 import { useAuthContext } from "../context/AuthContext";
 
-import { API_URL } from "../utils/api";
-
 export default function AddAddressModal({ onClose, editAddress }) {
   const { token } = useAuthContext();
 
@@ -39,8 +37,6 @@ export default function AddAddressModal({ onClose, editAddress }) {
           body: JSON.stringify({ label, address }),
         },
       );
-
-      console.log(API_URL);
 
       setLoading(false);
       onClose();

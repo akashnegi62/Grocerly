@@ -2,7 +2,6 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useAuth } from "../hooks/useAuth";
-import { API_URL } from "../utils/api";
 
 export default function VerifyOtp({ email, onClose }) {
   const [otp, setOtp] = useState("");

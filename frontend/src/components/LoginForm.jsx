@@ -2,7 +2,6 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { FiMail, FiLock } from "react-icons/fi";
 import { useAuth } from "../hooks/useAuth";
-import { API_URL } from "../utils/api";
 
 export default function LoginForm({ onClose, setStep }) {
   const [email, setEmail] = useState("");

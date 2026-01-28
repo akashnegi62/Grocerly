@@ -4,8 +4,6 @@ import ProductCard from "../components/ProductCard";
 import ProductCardSkeleton from "../components/ProductCardSkeleton";
 import bag from "../assets/Images/bag.webp";
 
-import { API_URL } from "../utils/api";
-
 export default function Search() {
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);

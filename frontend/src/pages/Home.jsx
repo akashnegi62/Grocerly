@@ -5,8 +5,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 import CategoryBar from "../components/CategoryBar";
 import ProductCard from "../components/ProductCard";
 
-import { API_URL } from "../utils/api";
-
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);

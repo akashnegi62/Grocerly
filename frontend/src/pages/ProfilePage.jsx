@@ -12,8 +12,6 @@ import { FiHome } from "react-icons/fi";
 import { FaRegEdit } from "react-icons/fa";
 import { FiDelete } from "react-icons/fi";
 
-import { API_URL } from "../utils/api";
-
 import { useAuth } from "../hooks/useAuth";
 import { useAuthContext } from "../context/AuthContext";
 import AddAddressModal from "../components/AddAddressModal";

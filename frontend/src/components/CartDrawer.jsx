@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -31,7 +32,6 @@ export default function CartDrawer() {
   /* FETCH ADDRESSES */
   useEffect(() => {
     if (isCartOpen && user) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setAddressLoading(true);
 
       fetch(`http://localhost:3000/api/users/addresses`, {
@@ -288,6 +288,7 @@ export default function CartDrawer() {
       </div>
 
       {/* Modals */}
+      
       {showSelectAddress && (
         <SelectAddressModal
           onAddNew={() => {

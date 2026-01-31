@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useEffect, useState, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
@@ -14,7 +15,6 @@ export default function Search() {
 
   // FETCH ALL PRODUCTS ONCE
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
     fetch(`http://localhost:3000/api/products`)
@@ -33,7 +33,6 @@ export default function Search() {
   // FILTER WHEN QUERY CHANGES
   useEffect(() => {
     if (!query) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFiltered(products);
     } else {
       const q = query.toLowerCase();

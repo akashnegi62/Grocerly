@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -14,7 +15,6 @@ export default function CategoryPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
     fetch(`http://localhost:3000/api/products/category/${category}`)

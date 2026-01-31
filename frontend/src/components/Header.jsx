@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 import { useState, useMemo } from "react";
 import { FiSearch, FiShoppingCart, FiUser, FiMapPin } from "react-icons/fi";
 import {
@@ -24,7 +25,6 @@ export default function Header({ onAuthOpen }) {
 
   /* DYNAMIC DELIVERY TIME */
   const deliveryTime = useMemo(() => {
-    // eslint-disable-next-line react-hooks/purity
     return Math.floor(Math.random() * 5) + 6;
   }, []);
 

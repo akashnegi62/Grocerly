@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import bag from "../assets/Images/bag.webp";
 
+// images
+
+import bag from "../assets/Images/bag.webp";
 import All from "../assets/Images/all.webp";
 import Fruits from "../assets/Images/fruits.png";
 import Dairy from "../assets/Images/dairy.png";

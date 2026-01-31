@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useEffect, useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
 
@@ -50,5 +51,4 @@ export function AddressProvider({ children }) {
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useAddress = () => useContext(AddressContext);

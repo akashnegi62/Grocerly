@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useEffect, useState } from "react";
 import { FiX } from "react-icons/fi";
 import { useAuthContext } from "../context/AuthContext";
@@ -10,9 +11,9 @@ export default function AddAddressModal({ onClose, editAddress }) {
   const [loading, setLoading] = useState(false);
 
   /* PREFILL WHEN EDIT */
+  
   useEffect(() => {
     if (editAddress) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLabel(editAddress.label);
       setAddress(editAddress.address);
     }

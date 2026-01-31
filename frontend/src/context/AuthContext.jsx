@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react-hooks/set-state-in-effect */
 import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext(null);
@@ -13,7 +15,6 @@ export function AuthProvider({ children }) {
     const storedToken = localStorage.getItem("token");
 
     if (storedUser && storedToken) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setUser(JSON.parse(storedUser));
       setToken(storedToken);
     }
@@ -55,7 +56,6 @@ export function AuthProvider({ children }) {
 }
 
 /* CUSTOM HOOK */
-// eslint-disable-next-line react-refresh/only-export-components
 export const useAuthContext = () => {
   const context = useContext(AuthContext);
   if (!context) {

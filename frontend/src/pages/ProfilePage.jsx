@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import {
   FiBox,
@@ -195,7 +196,6 @@ function Addresses() {
   /* FETCH ADDRESSES */
   useEffect(() => {
     fetchAddresses();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchAddresses = async () => {

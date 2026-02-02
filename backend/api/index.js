@@ -20,7 +20,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // local frontend
-      "https://grocerly-xi.vercel.app/", // deployed frontend
+      "https://grocerly-xi.vercel.app", // deployed frontend
     ],
     credentials: true,
   }),

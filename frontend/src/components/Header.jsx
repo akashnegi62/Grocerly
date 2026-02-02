@@ -56,7 +56,7 @@ export default function Header({ onAuthOpen }) {
   const cartCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
 
   return (
-    <header className="h-[10vh] w-full bg-white sticky top-0 z-50 border-b border-gray-200">
+    <header className="h-[12vh] w-full bg-white sticky top-0 z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto flex items-center gap-4 px-4 pt-6">
         {/* LOGO */}
         <Link

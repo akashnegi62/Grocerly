@@ -13,7 +13,7 @@ export function AddressProvider({ children }) {
   useEffect(() => {
     if (!token) return;
 
-    fetch(`http://localhost:3000/api/users/addresses`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/users/addresses`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -28,7 +28,7 @@ export function AddressProvider({ children }) {
 
   /* ADD ADDRESS */
   const addAddress = async (newAddress) => {
-    const res = await fetch(`http://localhost:3000/api/users/addresses`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/addresses`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

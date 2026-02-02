@@ -11,7 +11,7 @@ export default function AddAddressModal({ onClose, editAddress }) {
   const [loading, setLoading] = useState(false);
 
   /* PREFILL WHEN EDIT */
-  
+
   useEffect(() => {
     if (editAddress) {
       setLabel(editAddress.label);
@@ -27,8 +27,8 @@ export default function AddAddressModal({ onClose, editAddress }) {
 
       await fetch(
         editAddress
-          ? `http://localhost:3000/api/users/addresses/${editAddress._id}`
-          : `http://localhost:3000/api/users/addresses`,
+          ? `${import.meta.env.VITE_API_URL}/api/users/addresses/${editAddress._id}`
+          : `${import.meta.env.VITE_API_URL}/api/users/addresses`,
         {
           method: editAddress ? "PUT" : "POST",
           headers: {

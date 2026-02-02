@@ -34,7 +34,7 @@ export default function CartDrawer() {
     if (isCartOpen && user) {
       setAddressLoading(true);
 
-      fetch(`http://localhost:3000/api/users/addresses`, {
+      fetch(`${import.meta.env.VITE_API_URL}/api/users/addresses`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -19,7 +19,7 @@ export default function ProductDetails() {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`http://localhost:3000/api/products/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -32,7 +32,7 @@ export default function ProductDetails() {
   useEffect(() => {
     if (!product) return;
 
-    fetch(`http://localhost:3000/api/products?type=${product.type}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/products?type=${product.type}`)
       .then((res) => res.json())
       .then((data) => {
         const filtered = data.filter((item) => item._id !== product._id);

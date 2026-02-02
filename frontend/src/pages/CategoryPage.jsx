@@ -17,7 +17,7 @@ export default function CategoryPage() {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`http://localhost:3000/api/products/category/${category}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/products/category/${category}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

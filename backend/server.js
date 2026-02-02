@@ -16,7 +16,15 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // local frontend
+      "https://grocerly-xi.vercel.app/", // deployed frontend
+    ],
+    credentials: true,
+  }),
+);
 
 /* ROUTES */
 app.get("/", (req, res) => {
@@ -35,6 +43,6 @@ app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });

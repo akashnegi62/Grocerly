@@ -27,8 +27,8 @@ export default function AddAddressModal({ onClose, editAddress }) {
 
       await fetch(
         editAddress
-          ? `${import.meta.env.VITE_API_URL}/api/users/addresses/${editAddress._id}`
-          : `${import.meta.env.VITE_API_URL}/api/users/addresses`,
+          ? `${import.meta.env.VITE_API_URL}/users/addresses/${editAddress._id}`
+          : `${import.meta.env.VITE_API_URL}/users/addresses`,
         {
           method: editAddress ? "PUT" : "POST",
           headers: {
